@@ -1,0 +1,35 @@
+def addition(n1, n2):
+    return n1 + n2
+
+def substraction(n1, n2):
+    return n1 - n2
+
+def multiplication(n1, n2):
+    return n1 * n2
+
+def division(n1, n2):
+    return n1 / n2
+
+operations = {
+    "+": addition,
+    "-": substraction,
+    "*": multiplication,
+    "/": division
+}
+
+num1 = float(input("Enter the first number: "))
+continue_calc = "yes"
+
+while continue_calc == "yes":
+    ops = input("+\n-\n*\n/\nChoose the operator: ")
+    num2 = float(input("Enter the next number: "))
+
+    if ops in operations:
+        num1 = operations[ops](num1, num2)
+        print(f"Current result: {num1}")
+    else:
+        print("Invalid operator!")
+
+    continue_calc = input("Type 'yes' to continue calculating or 'no' to stop: ").lower()
+
+print(f"Final result: {num1}")
